@@ -8,6 +8,7 @@ namespace DragonspiritGames.PlatformerController
         [SerializeField, Range(0f, 100f)] float _maxSpeed = 4f;
         [SerializeField, Range(0f, 100f)] float _maxAcceleration = 35f;
         [SerializeField, Range(0f, 100f)] float _maxAirAcceleration = 20f;
+        [SerializeField] AudioClip[] _stepsClips;
 
         Controller _controller;
         CollisionDataDetector _collisionDetector;
@@ -47,10 +48,12 @@ namespace DragonspiritGames.PlatformerController
             if (Mathf.Abs(_velocity.x) > Mathf.Epsilon)
             {
                 _gaiaAnimator.SetBool("isRunning", true);
+                AudioManager.Instance.PlayClip(_stepsClips[7]);
             }
             else
             {
                 _gaiaAnimator.SetBool("isRunning", false);
+                AudioManager.Instance.StopClip(_stepsClips[7]);
             }
 
             if (_velocity.x < -0.2f)
