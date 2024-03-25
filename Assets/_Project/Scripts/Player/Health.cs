@@ -13,7 +13,6 @@ namespace DragonspiritGames.PlatformerController
         void Awake()
         {
             _currentHealth = _maximumHealth;
-            Debug.Log(_currentHealth);
             if (Instance == null)
             {
                 Instance = this;

@@ -41,7 +41,7 @@ namespace DragonspiritGames.PlatformerController
 
         void RetrieveFriction(Collision2D collision)
         {
-            _material = collision.rigidbody.sharedMaterial;
+            _material = collision.rigidbody?.sharedMaterial;
 
             Friction = 0f;
             if (_material != null)
