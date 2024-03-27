@@ -41,7 +41,8 @@ namespace DragonspiritGames.PlatformerController
             _onGround = _collisionDetector.OnGround;
             _velocity = _rigidbody.velocity;
 
-            if (_onGround & _rigidbody.velocity.y == 0 ) 
+            //TODO: IsFalling Bool insted
+            if (_onGround) 
             {
                 _jumpPhase = 0;
                 _coyoteCounter = _coyoteTime;
@@ -71,15 +72,15 @@ namespace DragonspiritGames.PlatformerController
                 JumpAction();
             }
 
-            if (_controller.input.RetrieveJumpInput(this.gameObject) && _rigidbody.velocity.y > 0f)
+            if (_controller.input.RetrieveJumpInput(this.gameObject) && _rigidbody.velocity.y > .05f)
             {
                 _rigidbody.gravityScale = _upwardGravity;
             }
-            else if (!_controller.input.RetrieveJumpInput(this.gameObject) && _rigidbody.velocity.y < 0f)
+            else if (!_controller.input.RetrieveJumpInput(this.gameObject) && _rigidbody.velocity.y < -1f)
             {
                 _rigidbody.gravityScale = _downwardGravity;
             }
-            else if (_rigidbody.velocity.y == 0f)
+            else if (_rigidbody.velocity.y > -1f && _rigidbody.velocity.y < 1f)
             {
                 _rigidbody.gravityScale = _defaultGravity;
             }
