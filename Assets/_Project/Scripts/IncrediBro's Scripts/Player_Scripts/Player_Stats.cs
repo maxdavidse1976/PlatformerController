@@ -15,7 +15,8 @@ namespace DragonspiritGames.PlatformerController
         [Space(10)]
 
         [Header("Physics")]
-        public bool M_Grounded;
+        public bool M_OnGround;
+        public bool M_OnLadder;
         public float M_Friction = 0f;
         
     }

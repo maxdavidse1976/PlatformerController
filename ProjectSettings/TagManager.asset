@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pickup
   - Moving Platform
+  - Climbable
   layers:
   - Default
   - TransparentFX

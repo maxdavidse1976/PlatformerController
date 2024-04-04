@@ -30,7 +30,7 @@ namespace DragonspiritGames.PlatformerController
 
         void AnimateMovements()
         {
-            if (Mathf.Abs(player_stats.M_Input.RetrieveMoveInput()) > Mathf.Epsilon && player_stats.M_Grounded)
+            if (Mathf.Abs(player_stats.M_Input.GetHorizontalAxis()) > Mathf.Epsilon && player_stats.M_OnGround)
             {
                 player_stats.M_Animator.SetBool("isRunning", true);
                 //AudioManager.Instance.PlayClip(_stepsClips[7]);
@@ -45,7 +45,7 @@ namespace DragonspiritGames.PlatformerController
         void AnimateJumps()
         {
             player_stats.M_Animator.SetFloat("yVelocity", player_stats.M_Rigidbody.velocity.y);
-            player_stats.M_Animator.SetBool("isGrounded", player_stats.M_Grounded);
+            player_stats.M_Animator.SetBool("isGrounded", player_stats.M_OnGround);
         }
     }
 }

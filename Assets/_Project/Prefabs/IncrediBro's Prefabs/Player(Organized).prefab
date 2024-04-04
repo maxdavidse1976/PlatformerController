@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 7411334543590169706}
   - component: {fileID: 2644084995459932278}
   - component: {fileID: 830142248277756551}
+  - component: {fileID: 309198587672988409}
   m_Layer: 7
   m_Name: Player(Organized)
   m_TagString: Player
@@ -249,7 +250,8 @@ MonoBehaviour:
   M_Animator: {fileID: 700594643186293492}
   M_Input: {fileID: 484427539588300528}
   M_SpriteRenderer: {fileID: 6189742497825005866}
-  M_Grounded: 0
+  M_OnGround: 0
+  M_OnLadder: 0
   M_Friction: 0
 --- !u!114 &6536073495672239677
 MonoBehaviour:
@@ -306,12 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048aae43fd4b94d91903c2ba3d37d64b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 1
-  maxAirJumps: 2
-  downwardGravity: 3
-  upwardGravity: 1.7
-  coyoteTime: 0.1
-  jumpBufferTime: 0.2
+  maxAirJumps: 1
   maxJumpTime: 0.2
   variableJumpHeightMultiplier: 0.1
   jumpForce: 5
@@ -327,6 +324,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f0a8612fd1c4a04ba461786f915211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &309198587672988409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238621942598618545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67d4c61f8f8ca491cbe9653479134dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_climbSpeed: 2.5
 --- !u!1 &6143090729125803540
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,7 +614,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 864747267, guid: ad6ebb33f921b7041957a8ac0ad7edcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

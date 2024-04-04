@@ -26,18 +26,22 @@ namespace DragonspiritGames.PlatformerController
 
         void Update()
         {
-            _inputDirection.x = player_stats.M_Input.RetrieveMoveInput();
+            if (player_stats.M_OnLadder && !player_stats.M_OnGround) return;
+
+            _inputDirection.x = player_stats.M_Input.GetHorizontalAxis();
             _desiredVelocity = new Vector2(_inputDirection.x, 0f) * Mathf.Max(m_maxSpeed - player_stats.M_Friction, 0f);
         }
 
         private void FixedUpdate()
         {
+            if (player_stats.M_OnLadder && !player_stats.M_OnGround) return;
+
             Move();
         }
 
         void Move()
         {
-            _onGround = player_stats.M_Grounded;
+            _onGround = player_stats.M_OnGround;
             Vector2 _velocity = player_stats.M_Rigidbody.velocity;
 
             _acceleration = _onGround ? m_maxAcceleration : m_maxAirAcceleration;

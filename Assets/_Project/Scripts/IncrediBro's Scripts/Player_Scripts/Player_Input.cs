@@ -46,10 +46,16 @@ namespace DragonspiritGames.PlatformerController
             m_inputActions = null;
         }
 
-        public float RetrieveMoveInput()
+        public float GetHorizontalAxis()
         {
             Vector2 movement = m_playerMovementIA.ReadValue<Vector2>();
             return movement.x;
+        }
+
+        public float GetVerticalAxis()
+        {
+            Vector2 movement = m_playerMovementIA.ReadValue<Vector2>();
+            return movement.y;
         }
 
         public bool JumpPressedThisFrame()

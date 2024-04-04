@@ -18,7 +18,7 @@ namespace DragonspiritGames.PlatformerController
 
         private void Update()
         {
-            player_stats.M_Grounded = IsGrounded();
+            player_stats.M_OnGround = IsGrounded();
         }
 
         bool IsGrounded()
