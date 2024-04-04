@@ -39,12 +39,12 @@ namespace DragonspiritGames.PlatformerController
             }
 
             // Handle variable jump height
-            if (isJumping && player_stats.M_Input.JumpPressed() && jumpTime < maxJumpTime)
+            if (isJumping && jumpTime < maxJumpTime)
             {
-                player_stats.M_Rigidbody.velocity = new Vector2(player_stats.M_Rigidbody.velocity.x, jumpForce * (1 + variableJumpHeightMultiplier * (1 - jumpTime / maxJumpTime)));
                 jumpTime += Time.deltaTime;
             }
-            else if (isJumping && player_stats.M_Input.JumpEndedThisFrame())
+
+            if (isJumping && player_stats.M_Input.JumpEndedThisFrame())
             {
                 isJumping = false;
             }

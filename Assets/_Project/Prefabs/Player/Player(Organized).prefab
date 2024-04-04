@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 4569090496602265082}
   - component: {fileID: 7411334543590169706}
   - component: {fileID: 2644084995459932278}
+  - component: {fileID: 830142248277756551}
   m_Layer: 7
   m_Name: Player(Organized)
   m_TagString: Player
@@ -262,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd4a33b8195b4046a7b12c988f2a1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 0.55
+  raycastDistance: 0.52
   groundCollisionLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -314,6 +315,18 @@ MonoBehaviour:
   maxJumpTime: 0.2
   variableJumpHeightMultiplier: 0.1
   jumpForce: 5
+--- !u!114 &830142248277756551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238621942598618545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f0a8612fd1c4a04ba461786f915211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6143090729125803540
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
-  m_MaxWindowSize: -1
+  m_MaxWindowSize: 0
 --- !u!1 &9134675001323381691
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,4 +949,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
-  m_MaxWindowSize: -1
+  m_MaxWindowSize: 0
