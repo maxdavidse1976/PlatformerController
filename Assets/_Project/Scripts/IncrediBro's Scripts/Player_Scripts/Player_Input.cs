@@ -11,8 +11,7 @@ namespace DragonspiritGames.PlatformerController
 
         private InputAction m_playerMovementIA;
         private InputAction m_playerJumpIA;
-        
-        bool _isJumping;
+        private InputAction m_playerInteractIA;
 
         void OnEnable()
         {
@@ -34,8 +33,8 @@ namespace DragonspiritGames.PlatformerController
             m_playerJumpIA = m_inputActions.Player.Jump;
             m_playerJumpIA.Enable();
 
-            //m_playerInteractIA = m_inputActions.Player.Interact;
-            //m_playerInteractIA.Enable();
+            m_playerInteractIA = m_inputActions.Player.Interact;
+            m_playerInteractIA.Enable();
         }
 
         void ClearInputActions()
@@ -69,6 +68,19 @@ namespace DragonspiritGames.PlatformerController
         public bool JumpPressed()
         {
             return m_playerJumpIA.IsPressed();
+        }
+
+        public bool InteractPressedThisFrame()
+        {
+            return m_playerInteractIA.triggered;
+        }
+        public bool InteractEndedThisFrame()
+        {
+            return m_playerInteractIA.WasReleasedThisFrame();
+        }
+        public bool InteractPressed()
+        {
+            return m_playerInteractIA.IsPressed();
         }
     }
 }

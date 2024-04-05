@@ -18,7 +18,7 @@ namespace DragonspiritGames.PlatformerController
             var player = collision.CompareTag("Player");
             if (player)
             {
-                Health.Instance.HealPlayer(_healSize);
+                PlayerHealth.Instance.HealPlayer(_healSize);
             }
         }
 

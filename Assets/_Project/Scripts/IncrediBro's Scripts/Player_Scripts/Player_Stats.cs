@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
 {
-    public class Player_Stats : MonoBehaviour
+    public class Player_Stats : Health
     {
+        [Space(10)]
+
         [Header("Components")]
         public Rigidbody2D M_Rigidbody;
         public Animator M_Animator;
@@ -18,6 +20,5 @@ namespace DragonspiritGames.PlatformerController
         public bool M_OnGround;
         public bool M_OnLadder;
         public float M_Friction = 0f;
-        
     }
 }

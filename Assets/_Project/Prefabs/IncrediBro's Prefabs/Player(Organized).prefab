@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 2644084995459932278}
   - component: {fileID: 830142248277756551}
   - component: {fileID: 309198587672988409}
+  - component: {fileID: 5042060375245910403}
   m_Layer: 7
   m_Name: Player(Organized)
   m_TagString: Player
@@ -246,6 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dbe5a9b270e476b8980a69daaeb6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_maxHealth: 3
+  m_currentHealth: 0
+  m_destroyOnDeath: 0
   M_Rigidbody: {fileID: 1824780531258492524}
   M_Animator: {fileID: 700594643186293492}
   M_Input: {fileID: 484427539588300528}
@@ -337,6 +341,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_climbSpeed: 2.5
+--- !u!114 &5042060375245910403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238621942598618545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116c17c5465d24c41858688c9978098e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6143090729125803540
 GameObject:
   m_ObjectHideFlags: 0
