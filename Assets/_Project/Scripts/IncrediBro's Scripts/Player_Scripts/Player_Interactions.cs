@@ -31,7 +31,10 @@ namespace DragonspiritGames.PlatformerController
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            m_currentInteractable?.DisableInteractGFX();
+            if (m_currentInteractable?.GetInteractableType() != InteractableType.Health)
+            {
+                m_currentInteractable?.DisableInteractGFX();
+            }
             m_currentInteractable = null;
         }
     }

@@ -15,6 +15,8 @@ namespace DragonspiritGames.PlatformerController
         [SerializeField] protected GameObject m_interactGFX;
         [SerializeField] protected InteractableType m_interactableType;
 
+        public InteractableType GetInteractableType() { return m_interactableType; }
+
         public abstract void Interact();
 
         public virtual void EnableInteractGFX()
@@ -23,6 +25,7 @@ namespace DragonspiritGames.PlatformerController
 
             if(m_interactableType == InteractableType.Health)
             {
+                Interact();
                 m_interactGFX.transform.parent = null;
                 Destroy(gameObject);
             }
