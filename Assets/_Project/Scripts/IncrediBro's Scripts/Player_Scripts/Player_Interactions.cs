@@ -16,9 +16,14 @@ namespace DragonspiritGames.PlatformerController
 
         private void Update()
         {
-            if(m_currentInteractable && player_stats.M_Input.InteractPressed())
+            if(m_currentInteractable && m_currentInteractable.transform.parent == null && player_stats.M_Input.InteractEndedThisFrame())
             {
                 m_currentInteractable.Interact();
+            }
+
+            if (player_stats.M_HoldThrowTransform.childCount > 0 && player_stats.M_Input.InteractEndedThisFrame())
+            {
+                player_stats.M_HoldThrowTransform.GetComponentInChildren<Throwable>().Throw();
             }
         }
 

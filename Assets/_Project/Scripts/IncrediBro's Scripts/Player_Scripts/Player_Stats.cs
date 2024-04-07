@@ -23,6 +23,7 @@ namespace DragonspiritGames.PlatformerController
         public bool M_OnGround;
         public bool M_OnLadder;
         public float M_Friction = 0f;
+        public float M_ThrowForce = 10f;
 
         private void Awake()
         {

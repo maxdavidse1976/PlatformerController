@@ -20,11 +20,13 @@ namespace DragonspiritGames.PlatformerController
 
             if (player_stats.M_Rigidbody.velocity.x < -0.2f)
             {
-                player_stats.M_SpriteRenderer.flipX = true;
+                //player_stats.M_SpriteRenderer.flipX = true;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
             else if (player_stats.M_Rigidbody.velocity.x > 0.2f)
             {
-                player_stats.M_SpriteRenderer.flipX = false;
+                //player_stats.M_SpriteRenderer.flipX = false;
+                transform.localScale = new Vector3(1, 1, 1);
             }
         }
 
