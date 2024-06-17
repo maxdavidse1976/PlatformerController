@@ -7,7 +7,8 @@ namespace DragonspiritGames.PlatformerController
     public enum InteractableType
     {
         Health,
-        Holdable
+        Holdable,
+        Portal
     }
 
     public abstract class Interactable : MonoBehaviour
@@ -28,6 +29,10 @@ namespace DragonspiritGames.PlatformerController
                 Interact();
                 m_interactGFX.transform.parent = null;
                 Destroy(gameObject);
+            }
+            else if (m_interactableType == InteractableType.Portal)
+            {
+                Interact();
             }
         }
 
