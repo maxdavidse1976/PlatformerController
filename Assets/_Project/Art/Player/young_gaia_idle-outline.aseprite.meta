@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0a7db393722aafb4c8fef27b642e1a16
+guid: 8a3644f1e1b3ba848ab5ad9bb23842a3
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,58 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: young_gaia_jump_Frame_0
+  - name: young_gaia_idle-outline_Frame_0
     originalName: 
-    pivot: {x: 0.3888889, y: -0.016129032}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 47
-      y: 59
-      width: 18
-      height: 62
-    spriteID: e62fa63f7661e8f4aaa9d9477dea581c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 47, y: 59}
-  - name: young_gaia_jump_Frame_1
-    originalName: 
-    pivot: {x: 0.3, y: -0.04255319}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 135
-      width: 30
-      height: 47
-    spriteID: 51acc99e3164f3e43b035c5f7154ccff
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 135}
-  - name: young_gaia_jump_Frame_2
-    originalName: 
-    pivot: {x: 0.45714286, y: -0.035714287}
+    pivot: {x: 0.6111111, y: -0.016129032}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 35
-      height: 56
-    spriteID: d31179f7f9f6c9844b3407372a6c5d67
+      width: 18
+      height: 62
+    spriteID: 6f77663333b8ddf4e97ef8536b85eaf9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -179,18 +139,78 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: young_gaia_jump_Frame_3
+  - name: young_gaia_idle-outline_Frame_1
     originalName: 
-    pivot: {x: 0.425, y: -0.3617021}
+    pivot: {x: 0.6111111, y: -0.016129032}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
+      x: 4
+      y: 74
+      width: 18
+      height: 62
+    spriteID: a95331c3a7bb36e42b25badece7a3f4f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 74}
+  - name: young_gaia_idle-outline_Frame_2
+    originalName: 
+    pivot: {x: 0.6111111, y: -0.016129032}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 144
+      width: 18
+      height: 62
+    spriteID: b08305c5e6880534aa46f65534abff23
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 144}
+  - name: young_gaia_idle-outline_Frame_3
+    originalName: 
+    pivot: {x: 0.6111111, y: -0.016393442}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 30
+      y: 144
+      width: 18
+      height: 61
+    spriteID: 9e4e5f237f5ce2f4f8ff5815f84270c4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 30, y: 144}
+  - name: young_gaia_idle-outline_Frame_4
+    originalName: 
+    pivot: {x: 0.6111111, y: -0.016393442}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 56
       y: 4
-      width: 40
-      height: 47
-    spriteID: 3944b0224010dca4a8996c8f9f261c98
+      width: 18
+      height: 61
+    spriteID: e60b9e63f0eef5a41979702aea279597
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,19 +218,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 4}
-  - name: young_gaia_jump_Frame_4
+    uvTransform: {x: 56, y: 4}
+  - name: young_gaia_idle-outline_Frame_5
     originalName: 
-    pivot: {x: 0.41935483, y: -0.06779661}
+    pivot: {x: 0.6111111, y: -0.016393442}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 68
-      width: 31
-      height: 59
-    spriteID: 058db7779d56b4c449c982097c159961
+      x: 56
+      y: 73
+      width: 18
+      height: 61
+    spriteID: 815474763e4b25f4cadfa47486b8931c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,19 +238,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 68}
-  - name: young_gaia_jump_Frame_5
+    uvTransform: {x: 56, y: 73}
+  - name: young_gaia_idle-outline_Frame_6
     originalName: 
-    pivot: {x: 0.42857146, y: -0.0882353}
+    pivot: {x: 0.6111111, y: -0.016129032}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 47
-      y: 129
-      width: 28
-      height: 34
-    spriteID: 14824b0136b41974081ef7e75c496a16
+      x: 30
+      y: 4
+      width: 18
+      height: 62
+    spriteID: aacaa48ac53e48a4fbd25c86843de4a2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,19 +258,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 47, y: 129}
-  - name: young_gaia_jump_Frame_6
+    uvTransform: {x: 30, y: 4}
+  - name: young_gaia_idle-outline_Frame_7
     originalName: 
-    pivot: {x: 0.47619048, y: -0.050000004}
+    pivot: {x: 0.6111111, y: -0.016129032}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 190
-      width: 21
-      height: 60
-    spriteID: 88d5e1beaded337438b5fdd86be00de4
+      x: 30
+      y: 74
+      width: 18
+      height: 62
+    spriteID: 99dd7ed359412074f9e6686abb7cec31
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,72 +278,80 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 190}
+    uvTransform: {x: 30, y: 74}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1146377074
-    name: young_gaia_jump
+    guid: 1086213177
+    name: young_gaia_idle-outline
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: young_gaia_jump_Frame_0
+    - name: young_gaia_idle-outline_Frame_0
       frameIndex: 0
       cellRect:
-        x: 25
+        x: 21
         y: 1
         width: 18
         height: 62
-      spriteId: e62fa63f7661e8f4aaa9d9477dea581c
-    - name: young_gaia_jump_Frame_1
+      spriteId: 6f77663333b8ddf4e97ef8536b85eaf9
+    - name: young_gaia_idle-outline_Frame_1
       frameIndex: 1
       cellRect:
-        x: 23
-        y: 2
-        width: 30
-        height: 47
-      spriteId: 51acc99e3164f3e43b035c5f7154ccff
-    - name: young_gaia_jump_Frame_2
+        x: 21
+        y: 1
+        width: 18
+        height: 62
+      spriteId: a95331c3a7bb36e42b25badece7a3f4f
+    - name: young_gaia_idle-outline_Frame_2
       frameIndex: 2
       cellRect:
-        x: 16
-        y: 2
-        width: 35
-        height: 56
-      spriteId: d31179f7f9f6c9844b3407372a6c5d67
-    - name: young_gaia_jump_Frame_3
+        x: 21
+        y: 1
+        width: 18
+        height: 62
+      spriteId: b08305c5e6880534aa46f65534abff23
+    - name: young_gaia_idle-outline_Frame_3
       frameIndex: 3
       cellRect:
-        x: 15
-        y: 17
-        width: 40
-        height: 47
-      spriteId: 3944b0224010dca4a8996c8f9f261c98
-    - name: young_gaia_jump_Frame_4
+        x: 21
+        y: 1
+        width: 18
+        height: 61
+      spriteId: 9e4e5f237f5ce2f4f8ff5815f84270c4
+    - name: young_gaia_idle-outline_Frame_4
       frameIndex: 4
       cellRect:
-        x: 19
-        y: 4
-        width: 31
-        height: 59
-      spriteId: 058db7779d56b4c449c982097c159961
-    - name: young_gaia_jump_Frame_5
+        x: 21
+        y: 1
+        width: 18
+        height: 61
+      spriteId: e60b9e63f0eef5a41979702aea279597
+    - name: young_gaia_idle-outline_Frame_5
       frameIndex: 5
       cellRect:
-        x: 20
-        y: 3
-        width: 28
-        height: 34
-      spriteId: 14824b0136b41974081ef7e75c496a16
-    - name: young_gaia_jump_Frame_6
+        x: 21
+        y: 1
+        width: 18
+        height: 61
+      spriteId: 815474763e4b25f4cadfa47486b8931c
+    - name: young_gaia_idle-outline_Frame_6
       frameIndex: 6
       cellRect:
-        x: 22
-        y: 3
-        width: 21
-        height: 60
-      spriteId: 88d5e1beaded337438b5fdd86be00de4
+        x: 21
+        y: 1
+        width: 18
+        height: 62
+      spriteId: aacaa48ac53e48a4fbd25c86843de4a2
+    - name: young_gaia_idle-outline_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 21
+        y: 1
+        width: 18
+        height: 62
+      spriteId: 99dd7ed359412074f9e6686abb7cec31
     linkedCells: []
     parentIndex: -1
   platformSettings: []
