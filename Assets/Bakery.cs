@@ -10,7 +10,7 @@ namespace DragonspiritGames.PlatformerController
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            ConversationManager.Instance.StartConversation(_npcConversation);
+            //ConversationManager.Instance.StartConversation(_npcConversation);
         }
     }
 }

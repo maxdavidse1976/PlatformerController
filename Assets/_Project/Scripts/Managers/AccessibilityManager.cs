@@ -10,7 +10,7 @@ namespace DragonspiritGames.PlatformerController
 
         void Awake()
         {
-            PlayerPrefs.SetInt("TurnOffBackgrounds", 1);
+            PlayerPrefs.SetInt("TurnOffBackgrounds", 0);
             PlayerPrefs.SetInt("TurnOffForegrounds", 0);
         }
 
