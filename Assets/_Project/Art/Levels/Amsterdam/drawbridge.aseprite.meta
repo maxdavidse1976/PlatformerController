@@ -121,15 +121,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: drawbridge
     originalName: 
-    pivot: {x: 0.5425101, y: -0.47480106}
+    pivot: {x: 0.32829726, y: 0.46507353}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 988
-      height: 377
+      width: 2449
+      height: 1632
     spriteID: e6a42ad7af595054195150d9608ad7d0
     spriteBone: []
     spriteOutline: []
@@ -151,10 +151,10 @@ ScriptedImporter:
     - name: drawbridge
       frameIndex: 0
       cellRect:
-        x: 424
-        y: 179
-        width: 988
-        height: 377
+        x: 156
+        y: -759
+        width: 2449
+        height: 1632
       spriteId: e6a42ad7af595054195150d9608ad7d0
     linkedCells: []
     parentIndex: -1
