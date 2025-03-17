@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/Settings.uss?fileID=7433441132597879392&amp;guid=7fca987cdfb5bf040ba351330763e265&amp;type=3#Settings" />
+    <ui:VisualElement name="settingsContainer">
+        <ui:Label text="Settings" class="title" />
+        <ui:Slider picking-mode="Ignore" label="Volume" low-value="0" high-value="1" name="volumeSlider" />
+        <ui:DropdownField name="resolutionDropdown" />
+        <ui:Toggle name="displaySubtitles" />
+        <ui:Toggle name="highContrastMode" />
+        <ui:Button text="Save settings" name="btnSave" />
+    </ui:VisualElement>
+</ui:UXML>

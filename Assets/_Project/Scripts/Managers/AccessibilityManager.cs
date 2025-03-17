@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
@@ -7,20 +8,44 @@ namespace DragonspiritGames.PlatformerController
         [Header("Layers to show or hide")]
         [SerializeField] GameObject _backgroundsLayer;
         [SerializeField] GameObject _foregroundsLayer;
+        
+        [Header("Camera settings")]
+        [SerializeField] Camera _mainCamera;
+        [SerializeField] GameObject _runCamera;
+        [SerializeField] GameObject _idleCamera;
+        [SerializeField] float _cameraDistance = 3.5f;
+        [SerializeField] string _originalBackgroundColor = "#A2F2EB";
+
+        float _idleCameraDistance = 2.5f;
+        float _runCameraDistance = 6f;
+
+        public static AccessibilityManager Instance { get; private set; }
+
+        public bool PlayAudioCues { get; private set; }
 
         void Awake()
         {
-            PlayerPrefs.SetInt("TurnOffBackgrounds", 0);
-            PlayerPrefs.SetInt("TurnOffForegrounds", 0);
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            // Normally this needs to come from options that we set, but for testing purposes we use an int that we set in Unity.
+            PlayerPrefs.SetInt("TurnOffBackgrounds", 1);
+            PlayerPrefs.SetInt("TurnOffForegrounds", 1);
+            PlayerPrefs.SetInt("TurnBackgroundColorBlack", 1);
+            PlayerPrefs.SetInt("TurnOnAudioCues", 1);
+            PlayerPrefs.SetInt("SetCameraDistance", 1);
         }
 
         void Update()
         {
             ShowBackgrounds();
             ShowForegrounds();
+            TurnBackgroundBlack();
+            TurnOnAudioCues();
+            MakeCameraStatic();
         }
         #region VisibilityOptions
-        // Normally this needs to come from options that we set, but for testing purposes we use a boolean that we set in Unity.
 
         /// <summary>
         /// Have the option to turn off backgrounds, this checks for the PlayerPrefs to be set to work.
@@ -42,7 +67,7 @@ namespace DragonspiritGames.PlatformerController
         /// </summary>
         void ShowForegrounds()
         {
-            if (PlayerPrefs.GetFloat("TurnOffForegrounds") == 1)
+            if (PlayerPrefs.GetInt("TurnOffForegrounds") == 1)
             {
                 _foregroundsLayer.SetActive(false);
             }
@@ -57,8 +82,44 @@ namespace DragonspiritGames.PlatformerController
         /// </summary>
         void TurnOnAudioCues()
         {
-
+            if (PlayerPrefs.GetInt("TurnOnAudioCues") == 1)
+            {
+                PlayAudioCues = true;
+            }
+            else
+            {
+                PlayAudioCues = false;
+            }
         }
+
+        void TurnBackgroundBlack()
+        {
+            Color color;
+            ColorUtility.TryParseHtmlString(_originalBackgroundColor, out color);
+            if (PlayerPrefs.GetInt("TurnBackgroundColorBlack") == 1)
+            {
+                _mainCamera.backgroundColor = Color.black;
+            }
+            else
+            {
+                _mainCamera.backgroundColor = color;
+            }
+        }
+
+        void MakeCameraStatic()
+        {
+            if (PlayerPrefs.GetInt("SetCameraDistance") == 1)
+            {
+                _idleCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = _cameraDistance;
+                _runCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = _cameraDistance;
+            }
+            else
+            {
+                _idleCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = _idleCameraDistance;
+                _runCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = _runCameraDistance;
+            }
+        }
+
         #endregion
 
         #region HearingOptions

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1671df0edff811a4da72b35f46663b37
+guid: 2b3cafc5232369b409d3fab645188fdb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: drawbridge
+  - name: Foxxionaire
     originalName: 
-    pivot: {x: 0.52982956, y: -0.21031745}
+    pivot: {x: 0.58866996, y: -0.011363637}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1408
-      height: 504
-    spriteID: e6a42ad7af595054195150d9608ad7d0
+      width: 406
+      height: 88
+    spriteID: 2c6264ce8da8b6340b8a2cd568a17ef4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 143410543
-    name: drawbridge
+    guid: 446416926
+    name: Foxxionaire
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: drawbridge
+    - name: Foxxionaire
       frameIndex: 0
       cellRect:
-        x: 214
-        y: 106
-        width: 1408
-        height: 504
-      spriteId: e6a42ad7af595054195150d9608ad7d0
+        x: 17
+        y: 1
+        width: 406
+        height: 88
+      spriteId: 2c6264ce8da8b6340b8a2cd568a17ef4
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 1920, y: 1080}
+  canvasSize: {x: 512, y: 128}

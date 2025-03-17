@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1671df0edff811a4da72b35f46663b37
+guid: 41ec10c6d31d39d41b10bb8588558a7a
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: drawbridge
+  - name: level-assets
     originalName: 
-    pivot: {x: 0.52982956, y: -0.21031745}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1408
-      height: 504
-    spriteID: e6a42ad7af595054195150d9608ad7d0
+      width: 1024
+      height: 1024
+    spriteID: 461c1fcd12e28f44ca648188a3535da5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 143410543
-    name: drawbridge
+    guid: -712063746
+    name: level-assets
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: drawbridge
+    - name: level-assets
       frameIndex: 0
       cellRect:
-        x: 214
-        y: 106
-        width: 1408
-        height: 504
-      spriteId: e6a42ad7af595054195150d9608ad7d0
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      spriteId: 461c1fcd12e28f44ca648188a3535da5
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 1920, y: 1080}
+  canvasSize: {x: 1024, y: 1024}

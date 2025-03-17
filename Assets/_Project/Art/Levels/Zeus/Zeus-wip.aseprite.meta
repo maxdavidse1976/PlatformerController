@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1671df0edff811a4da72b35f46663b37
+guid: 1673cc6a3fc041c4eb07633ab785052d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: drawbridge
+  - name: Zeus-wip
     originalName: 
-    pivot: {x: 0.52982956, y: -0.21031745}
+    pivot: {x: 0.40828404, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 1408
-      height: 504
-    spriteID: e6a42ad7af595054195150d9608ad7d0
+      width: 169
+      height: 251
+    spriteID: ab662ceab9b6fc642b4c9b15d65f21d2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,23 +142,23 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 143410543
-    name: drawbridge
+    guid: -736604278
+    name: Zeus-wip
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: drawbridge
+    - name: Zeus-wip
       frameIndex: 0
       cellRect:
-        x: 214
-        y: 106
-        width: 1408
-        height: 504
-      spriteId: e6a42ad7af595054195150d9608ad7d0
+        x: 59
+        y: 0
+        width: 169
+        height: 251
+      spriteId: ab662ceab9b6fc642b4c9b15d65f21d2
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 1920, y: 1080}
+  canvasSize: {x: 256, y: 256}
