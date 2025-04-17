@@ -80,7 +80,7 @@ Gaia ignores the words of her father and keeps running after the butterfly. Sudd
 	Narrator
 Press [Jump key] while running to jump further.
 
-The player learns how to do the double jump and safely reaches the other side (if they don't make it, give them another chance)
+The player learns how to do the running jump and safely reaches the other side (if they don't make it, give them another chance)
 
 	Dad (off screen)
 No! Gaia!
@@ -120,7 +120,7 @@ Gaia will resume running after the butterfly until she gets to a clearing where 
 	Gaia
 That is a little high, I will have to jump for it.
 
-Gaia runs toward the higher area and jumps to get to the platform where the portal is. It is emminating a sound that is sort of like a buzz. Just when she reaches the platform, the butterfly flies through the portal and vanishes.
+Gaia walks toward the higher area and jumps to get to the platform where the portal is. It is emminating a sound that is sort of like a buzz. Just when she reaches the platform, the butterfly flies through the portal and vanishes.
 
 [Cutscene]
 
