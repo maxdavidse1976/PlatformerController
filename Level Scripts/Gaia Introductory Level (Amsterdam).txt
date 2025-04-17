@@ -1,0 +1,146 @@
+Gaia Introductory Level (Amsterdam)
+
+We see a little girl get into the screen. She is wearing a purple dress. She is clearly very excited and looking around at all the colored buildings. Behind her (off-screen) are her father and brother Luca.
+
+	Gaia
+Wow, dad! Look at all those colors in the houses. We don't that where we live.
+
+	Dad (off screen)
+I know, but it is a lot safer where we live. Please don't wander off too far. I can't leave Luca alone and run after you.
+
+Gaia giggles and keeps going, slower at first and then a little faster again as she is fascinated by her surroundings. She stops in front of a bakery and looks at all the bread in the window. A seagull is on top of the bakery, and flies away as soon as she stands there.
+	
+	Gaia
+Dad! Can we buy some croissants, I want to eat something!
+
+	Dad (off screen)
+Again? We just had candies, you can wait a little longer.
+
+	Luca
+Hungry! Pappa, eat!
+
+Gaia knows her dad won't give in now, so she slowly keeps on going.
+
+In the streets we occasionally see some garbage on the floor or against one of the protective metal bars that are surrounding the canals. Gaia doesn't really pay much attention to it, but does make a comment about it here and there.
+
+	Gaia (while walking next to a particularly smelly garbage bag)
+Ewwww! That stinks!
+
+Gaia makes random remarks along the way about buildings that she sees. She particularly likes the flowers in some windows, and the different colors of walls. But also she remarks the hooks on highers buildings, that were used to move forniture that simply doesn't fit through the stairs.
+
+	Gaia
+Look at that house dad, there is a weird hook at the top of it. What is that?
+
+	Dad (off screen)
+Those are used to move heavy things, that don't fit through the stairs. Most houses here are very narrow, so you will not be able to move your sofa through the stairs.
+
+	Gaia
+Owww!
+
+The player now gets control of Gaia.
+
+	Narrator
+Use [Movement controls to move Gaia]
+
+The Player will get used to the controls by navigating Gaia from left to right.
+
+	Narrator
+Once you are used to moving Gaia around, let's move to the next part. This will be indicated by a flashing area (or sound if accessibility options are on)
+
+Gaia moves forward to the new area and sees a tiny butterfly like creature hovering in the air. 
+
+	Gaia
+What a pretty butterfly, I wonder if I can catch it.
+
+	Narrator
+Press [jump control] to jump.
+
+The player will try to jump and when they do, the butterfly will fly away, making Gaia comment about it and wanting to follow it.
+
+	Gaia
+Oh no, it's flying away. I want to catch it! I should go after it.
+
+For accessibility purposes the butterfly will constantly emit a sound, so that the blind player will know how to go after the butterfly. 
+
+After a while the butterfly goes a little faster.
+
+	Gaia
+Oh no, I can not keep up. I have to run!
+
+	Narrator
+Press [Run key] to run.
+
+Gaia starts running and her Dad responds.
+	
+	Dad (off screen)
+Gaia, not so fast. Luca and I can't keep up with you!
+
+Gaia ignores the words of her father and keeps running after the butterfly. Suddenly she reaches a double drawbridge that starts to open. A bell rings to indicate that the gate is going to close but Gaia keeps running and is already on the bridge, when it opens up. The barrier closes behind her. (This has a sound as well, for the accessibility)
+
+	Narrator
+Press [Jump key] while running to jump further.
+
+The player learns how to do the double jump and safely reaches the other side (if they don't make it, give them another chance)
+
+	Dad (off screen)
+No! Gaia!
+
+Gaia doesn't hear her father and keeps going after the butterfly, while her father has to wait for the bridge to open again.
+
+After a while we hear the distinct sound of the bridge opening again, but it is far in the background.
+
+The butterfly slows down and Gaia goes back to walking again. 
+	
+	Gaia
+It slowed down, maybe I can catch it now. Maybe I should try to jump for it again.
+
+She walks after the butterfly which remains uncatchable into the Vondelpark of Amsterdam.
+
+[Cutscene]
+
+Gaia stops for a second and wonders where her father and brother are.
+	
+	Gaia
+Dad? Luca?
+
+She looks back but sees nothing.
+
+	Gaia
+I don't see them anymore. Where are they?
+
+She then looks again to the other side, where the butterfly is hovering in the same place, as if it is waiting for her.
+
+The player gains control over Gaia again.
+
+	Gaia
+Well, I better catch this butterfly then.
+
+Gaia will resume running after the butterfly until she gets to a clearing where the screen start to shake as vines and branches are erupting from the earth, forming a portal which has a vortex forming on the inside of it. It is a little higher on a platform and the butterfly flies right at it. It waits in front of the vortex for Gaia to follow.
+
+	Gaia
+That is a little high, I will have to jump for it.
+
+Gaia runs toward the higher area and jumps to get to the platform where the portal is. It is emminating a sound that is sort of like a buzz. Just when she reaches the platform, the butterfly flies through the portal and vanishes.
+
+[Cutscene]
+
+At the same time Gaia's father and Luca arrive at the scene.
+
+He yells at her as he can see she is about to go through.
+
+	Dad
+Gaia, don't do it! Stay here with us!
+
+
+Gaia clearly doesn't hear it or is too taken by the idea of following the butterfly and she steps through the portal, after which it vanishes the same way it came by retracting the branches and vines back into the earth with a heavy rumble.
+
+	Dad
+Oh God, no! Gaia!!!
+
+	Luca
+Where did Gaia go?
+
+	Dad
+I wish I knew buddy, I wish I knew!
+
+[Fade to black]
