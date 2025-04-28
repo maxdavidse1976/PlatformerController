@@ -76,6 +76,7 @@ namespace DragonspiritGames.PlatformerController
 
         public void YesButtonClicked()
         {
+            Debug.Log("We clicked the yes button");
             ShowAccessibilityPanel();
         }
 

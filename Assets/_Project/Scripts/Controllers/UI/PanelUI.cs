@@ -14,7 +14,6 @@ namespace DragonspiritGames.PlatformerController
         void Awake()
         {
             _eventSystem = GetComponent<EventSystem>();
-            //_eventSystem.firstSelectedGameObject = PanelButtons[0].gameObject;
             PanelButtons[0].Select();
             Debug.Log($"PanelButton: {PanelButtons[0].name}");
         }
