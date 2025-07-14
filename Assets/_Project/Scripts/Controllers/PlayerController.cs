@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -44,5 +45,6 @@ namespace DragonspiritGames.PlatformerController
         {
             return _inputActions.Player.Move.ReadValue<Vector2>().x;
         }
+
     }
 }

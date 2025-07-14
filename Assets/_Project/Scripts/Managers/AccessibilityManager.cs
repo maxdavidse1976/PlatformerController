@@ -30,11 +30,11 @@ namespace DragonspiritGames.PlatformerController
                 Instance = this;
             }
             // Normally this needs to come from options that we set, but for testing purposes we use an int that we set in Unity.
-            PlayerPrefs.SetInt("TurnOffBackgrounds", 1);
-            PlayerPrefs.SetInt("TurnOffForegrounds", 1);
-            PlayerPrefs.SetInt("TurnBackgroundColorBlack", 1);
-            PlayerPrefs.SetInt("TurnOnAudioCues", 1);
-            PlayerPrefs.SetInt("SetCameraDistance", 1);
+            PlayerPrefs.SetInt("TurnOffBackgrounds", 0);
+            PlayerPrefs.SetInt("TurnOffForegrounds", 0);
+            PlayerPrefs.SetInt("TurnBackgroundColorBlack", 0);
+            PlayerPrefs.SetInt("TurnOnAudioCues", 0);
+            //PlayerPrefs.SetInt("SetCameraDistance", 0);
         }
 
         void Update()
