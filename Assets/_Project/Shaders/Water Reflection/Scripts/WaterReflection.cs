@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -60,13 +61,19 @@ public class WaterReflection : MonoBehaviour
 
     private void Awake()
     {
-        UpdateCamera();
         CacheTransformData();
     }
 
     private void Start()
     {
-        // Ensure camera is updated after all initialization
+        // Use LateStart pattern to ensure all objects are properly initialized
+        StartCoroutine(LateStart());
+    }
+
+    private IEnumerator LateStart()
+    {
+        // Wait until the end of the frame to ensure all objects are initialized
+        yield return new WaitForEndOfFrame();
         UpdateCamera();
     }
 

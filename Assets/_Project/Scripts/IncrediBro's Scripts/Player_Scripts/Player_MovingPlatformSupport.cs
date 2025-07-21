@@ -11,6 +11,7 @@ namespace DragonspiritGames.PlatformerController
             if(collision.collider.CompareTag("Moving Platform"))
             {
                 transform.SetParent(collision.transform);
+                transform.localScale = Vector3.one; 
             }
         }
 

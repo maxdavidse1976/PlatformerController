@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Project/Scenes/Amsterdam.unity
     guid: 01aebe8d1b12adf459ba18bc20ed09eb
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Project/Scenes/Poseidon Level.unity
     guid: c1d9bc85eb082e64899b0dc217e93f34
   m_configObjects:

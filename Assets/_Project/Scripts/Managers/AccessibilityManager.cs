@@ -34,7 +34,7 @@ namespace DragonspiritGames.PlatformerController
             PlayerPrefs.SetInt("TurnOffForegrounds", 0);
             PlayerPrefs.SetInt("TurnBackgroundColorBlack", 0);
             PlayerPrefs.SetInt("TurnOnAudioCues", 0);
-            //PlayerPrefs.SetInt("SetCameraDistance", 0);
+            PlayerPrefs.SetInt("SetCameraDistance", 0);
         }
 
         void Update()
