@@ -13672,7 +13672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2644084995459932278, guid: cb4a9bc26a9474d9d92a8daaed4cfca9, type: 3}
       propertyPath: maxAirJumps
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3244417133671415078, guid: cb4a9bc26a9474d9d92a8daaed4cfca9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13704,7 +13704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7411334543590169706, guid: cb4a9bc26a9474d9d92a8daaed4cfca9, type: 3}
       propertyPath: m_maxSpeed
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
