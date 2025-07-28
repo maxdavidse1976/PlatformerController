@@ -8,7 +8,7 @@ namespace DragonspiritGames.PlatformerController
         [SerializeField] float _rumbleDistance = 5f;
         [SerializeField] float _maxAudioDistance = 1;
         float _rumbleStrength = 0f;
-
+        float _timer = 0f;
 
         void Update()
         {
@@ -35,6 +35,7 @@ namespace DragonspiritGames.PlatformerController
         {
             Transform audioObject = ioi.Find("Audio");
             AudioSource audioSource = audioObject.GetComponent<AudioSource>();
+            Debug.Log($"Current distance: {distance}");
             if (Mathf.Abs(distance) > _maxAudioDistance)
             {
                 audioSource.enabled = false;
