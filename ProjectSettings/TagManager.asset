@@ -18,7 +18,7 @@ TagManager:
   - UI
   - Sky
   - Player
-  - 
+  - Ground
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3685691349
+    locked: 0
+  - name: Water
+    uniqueID: 743397233
     locked: 0
   - name: Building backgrounds
     uniqueID: 1998869563
