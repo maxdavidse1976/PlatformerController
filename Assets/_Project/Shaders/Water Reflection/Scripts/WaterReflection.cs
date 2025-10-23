@@ -77,7 +77,7 @@ public class WaterReflection : MonoBehaviour
         UpdateCamera();
     }
 
-#if UNITY_EDITOR
+
     private void Update()
     {
         // Only run in edit mode for editor updates
@@ -100,7 +100,6 @@ public class WaterReflection : MonoBehaviour
             EditorApplication.delayCall += UpdateCamera;
         }
     }
-#endif
 
     private void CheckForTransformChanges()
     {
