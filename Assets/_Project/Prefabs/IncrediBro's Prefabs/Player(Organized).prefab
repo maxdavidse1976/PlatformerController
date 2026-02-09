@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 830142248277756551}
   - component: {fileID: 309198587672988409}
   - component: {fileID: 5042060375245910403}
+  - component: {fileID: 2631600549986666041}
+  - component: {fileID: 5687668333186111913}
   m_Layer: 7
   m_Name: Player(Organized)
   m_TagString: Player
@@ -248,18 +250,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dbe5a9b270e476b8980a69daaeb6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 3
-  m_currentHealth: 0
-  m_destroyOnDeath: 0
-  m_dontDestroyOnLoad: 0
-  M_Rigidbody: {fileID: 1824780531258492524}
-  M_Animator: {fileID: 700594643186293492}
-  M_Input: {fileID: 484427539588300528}
-  M_SpriteRenderer: {fileID: 6189742497825005866}
-  M_HoldThrowTransform: {fileID: 3244417133671415078}
-  M_OnGround: 0
-  M_OnLadder: 0
-  M_Friction: 0
+  maxHealth: 0
+  currentHealth: 0
+  destroyOnDeath: 0
+  _dontDestroyOnLoad: 0
+  Rigidbody: {fileID: 1824780531258492524}
+  Animator: {fileID: 700594643186293492}
+  Input: {fileID: 484427539588300528}
+  SpriteRenderer: {fileID: 6189742497825005866}
+  HoldThrowTransform: {fileID: 1776200211200130843}
+  OnGround: 0
+  OnLadder: 0
+  Friction: 0
+  ThrowForce: 10
 --- !u!114 &6536073495672239677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,10 +275,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd4a33b8195b4046a7b12c988f2a1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raycastDistance: 0.52
-  groundCollisionLayers:
+  _raycastDistance: 1
+  _groundCollisionLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
 --- !u!114 &4569090496602265082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,9 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27ebcaa517b74566a8c0707d0be1735, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeed: 4
-  m_maxAcceleration: 35
-  m_maxAirAcceleration: 20
+  _maxSpeed: 4
+  _maxAcceleration: 35
+  _maxAirAcceleration: 20
 --- !u!114 &2644084995459932278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,9 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAirJumps: 1
-  maxJumpTime: 0.2
-  variableJumpHeightMultiplier: 0.1
-  jumpForce: 5
+  _maxJumpTime: 0.5
+  _variableJumpHeightMultiplier: 0.5
+  _jumpForce: 3
 --- !u!114 &830142248277756551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67d4c61f8f8ca491cbe9653479134dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_climbSpeed: 2.5
+  _climbSpeed: 4
 --- !u!114 &5042060375245910403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +359,81 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116c17c5465d24c41858688c9978098e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2631600549986666041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238621942598618545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ff0ebb363985e4cb3dd39655331021, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rumbleDistance: 2
+  _maxAudioDistance: 5
+--- !u!114 &5687668333186111913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238621942598618545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 4d0e7ecb00000000
+  m_ShapePath:
+  - {x: -0.03557968, y: 0.014719486, z: 0}
+  - {x: -0.18244076, y: 0.105653286, z: 0}
+  - {x: -0.18046856, y: 0.14509535, z: 0}
+  - {x: -0.09566784, y: 0.21806335, z: 0}
+  - {x: -0.09566784, y: 0.2496171, z: 0}
+  - {x: -0.10947323, y: 0.25553322, z: 0}
+  - {x: -0.113417625, y: 0.33244562, z: 0}
+  - {x: -0.091724396, y: 0.34033394, z: 0}
+  - {x: -0.09075832, y: 0.44447517, z: 0}
+  - {x: -0.02270031, y: 0.48824215, z: 0}
+  - {x: 0.058935165, y: 0.4809904, z: 0}
+  - {x: 0.09894562, y: 0.45344353, z: 0}
+  - {x: 0.0954895, y: 0.3687644, z: 0}
+  - {x: 0.11104298, y: 0.3618517, z: 0}
+  - {x: 0.10758686, y: 0.31173515, z: 0}
+  - {x: 0.093761444, y: 0.3100071, z: 0}
+  - {x: 0.093761444, y: 0.35148287, z: 0}
+  - {x: 0.0851202, y: 0.35321093, z: 0}
+  - {x: 0.081664085, y: 0.29618168, z: 0}
+  - {x: 0.06956768, y: 0.29272556, z: 0}
+  - {x: 0.06611061, y: 0.26680326, z: 0}
+  - {x: 0.04018879, y: 0.26334715, z: 0}
+  - {x: 0.07993603, y: 0.22014284, z: 0}
+  - {x: 0.083805084, y: 0.074104786, z: 0}
+  - {x: 0.10944271, y: 0.06621599, z: 0}
+  - {x: 0.10944271, y: 0.016912937, z: 0}
+  - {x: 0.09760952, y: 0.016912937, z: 0}
+  - {x: 0.09760952, y: -0.11916208, z: 0}
+  - {x: 0.07788849, y: -0.12310648, z: 0}
+  - {x: 0.08182812, y: -0.18818903, z: 0}
+  - {x: 0.06802368, y: -0.19016075, z: 0}
+  - {x: 0.052247047, y: -0.20396566, z: 0}
+  - {x: -0.1074934, y: -0.17635632, z: 0}
+  - {x: -0.1114378, y: -0.13888597, z: 0}
+  - {x: -0.03842926, y: -0.022750378, z: 0}
+  m_ShapePathHash: -381532105
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 38234
+  m_LocalBounds:
+    m_Center: {x: -0.03569889, y: 0.14213824, z: 0}
+    m_Extent: {x: 0.14674187, y: 0.3461039, z: 0}
 --- !u!1 &6143090729125803540
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +711,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: -1
   m_Sprite: {fileID: 864747267, guid: ad6ebb33f921b7041957a8ac0ad7edcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -754,6 +832,7 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: 0
+  m_Padding: 0
 --- !u!1 &8766131661301733223
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +858,7 @@ Transform:
   m_GameObject: {fileID: 8766131661301733223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.187, y: 0.045, z: 0}
+  m_LocalPosition: {x: 0.34, y: 0.197, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1010,3 +1089,4 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: 0
+  m_Padding: 0

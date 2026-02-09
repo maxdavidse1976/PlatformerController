@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
@@ -7,40 +5,40 @@ namespace DragonspiritGames.PlatformerController
     public abstract class Health : MonoBehaviour
     {
         [Header("Health")]
-        [SerializeField] protected int m_maxHealth;
-        [SerializeField] protected int m_currentHealth;
-        [SerializeField] protected bool m_destroyOnDeath;
+        [SerializeField] protected int maxHealth;
+        [SerializeField] protected int currentHealth;
+        [SerializeField] protected bool destroyOnDeath;
 
-        public virtual int GetMaxHealthValue() { return m_maxHealth; }
-        public virtual int GetCurrentHealthValue() { return m_currentHealth; }
+        public virtual int GetMaxHealthValue() { return maxHealth; }
+        public virtual int GetCurrentHealthValue() { return currentHealth; }
 
         public virtual void TakeDamage(int _damageAmount)
         {
-            m_currentHealth -= _damageAmount;
-            if (m_currentHealth <= 0)
+            currentHealth -= _damageAmount;
+            if (currentHealth <= 0)
             {
                 Die();
             }
         }
 
-        public virtual void AddHealth(int _healAmount)
+        public virtual void AddHealth(int healAmount)
         {
-            m_currentHealth += _healAmount;
-            if (m_currentHealth > GetMaxHealthValue())
+            currentHealth += healAmount;
+            if (currentHealth > GetMaxHealthValue())
             {
-                m_currentHealth = GetMaxHealthValue();
+                currentHealth = GetMaxHealthValue();
             }
         }
 
         protected virtual void Die()
         {
-            if (m_destroyOnDeath) Destroy(gameObject);
+            if (destroyOnDeath) Destroy(gameObject);
             else gameObject.SetActive(false);
         }
 
         private void ResetHealth()
         {
-            m_currentHealth = m_maxHealth;
+            currentHealth = maxHealth;
         }
 
         protected void OnEnable()

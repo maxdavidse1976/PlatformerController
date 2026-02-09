@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
@@ -8,68 +6,68 @@ namespace DragonspiritGames.PlatformerController
     {
         [SerializeField, Range(0f, 5f)] private int maxAirJumps = 1;
 
-        [SerializeField] private float maxJumpTime = 0.5f; // Maximum time the jump button can be held down
-        [SerializeField] private float variableJumpHeightMultiplier = 0.5f; // Multiplier for variable jump height
-        [SerializeField] private float jumpForce = 10f;
-        private Player_Stats player_stats;
+        [SerializeField] float _maxJumpTime = 0.5f; // Maximum time the jump button can be held down
+        [SerializeField] float _variableJumpHeightMultiplier = 0.5f; // Multiplier for variable jump height
+        [SerializeField] float _jumpForce = 10f;
+        Player_Stats _player_stats;
 
-        private bool isJumping;
-        private float jumpTime;
-        private int remainingJumps;
+        bool _isJumping;
+        float _jumpTime;
+        int _remainingJumps;
 
-        private void Awake()
+        void Awake()
         {
-            player_stats = GetComponent<Player_Stats>();
-            remainingJumps = maxAirJumps;
+            _player_stats = GetComponent<Player_Stats>();
+            _remainingJumps = maxAirJumps;
         }
 
-        private void Update()
+        void Update()
         {
-            if (player_stats.M_Input.JumpPressedThisFrame())
+            if (_player_stats.Input.JumpPressedThisFrame())
             {
                 Jump();
             }
 
             // Handle variable jump height
-            if (isJumping && jumpTime < maxJumpTime)
+            if (_isJumping && _jumpTime < _maxJumpTime)
             {
-                jumpTime += Time.deltaTime;
+                _jumpTime += Time.deltaTime;
             }
 
-            if (isJumping && player_stats.M_Input.JumpEndedThisFrame())
+            if (_isJumping && _player_stats.Input.JumpEndedThisFrame())
             {
-                isJumping = false;
+                _isJumping = false;
             }
 
-            if (jumpTime >= maxJumpTime)
+            if (_jumpTime >= _maxJumpTime)
             {
-                isJumping = false;
+                _isJumping = false;
             }
 
-            if (player_stats.M_OnGround)
+            if (_player_stats.OnGround)
             {
-                remainingJumps = maxAirJumps;
-                jumpTime = 0;
+                _remainingJumps = maxAirJumps;
+                _jumpTime = 0;
             }
         }
-        private void FixedUpdate()
+        void FixedUpdate()
         {
-            if (isJumping && player_stats.M_Input.JumpPressed() && player_stats.M_Rigidbody.velocity.y > 0)
+            if (_isJumping && _player_stats.Input.JumpPressedThisFrame() && _player_stats.Rigidbody.velocity.y > 0)
             {
-                player_stats.M_Rigidbody.velocity = new Vector2(player_stats.M_Rigidbody.velocity.x, jumpForce * (1 + variableJumpHeightMultiplier * (1 - jumpTime / maxJumpTime)));
+                _player_stats.Rigidbody.velocity = new Vector2(_player_stats.Rigidbody.velocity.x, _jumpForce * (1 + _variableJumpHeightMultiplier * (1 - _jumpTime / _maxJumpTime)));
             }
         }
         void Jump()
         {
-            if (player_stats.M_OnGround || remainingJumps > 0)
+            if (_player_stats.OnGround || _remainingJumps > 0)
             {
-                player_stats.M_Rigidbody.velocity = new Vector2(player_stats.M_Rigidbody.velocity.x, jumpForce);
-                isJumping = true;
-                jumpTime = 0f;
+                _player_stats.Rigidbody.velocity = new Vector2(_player_stats.Rigidbody.velocity.x, _jumpForce);
+                _isJumping = true;
+                _jumpTime = 0f;
 
-                if (!player_stats.M_OnGround)
+                if (!_player_stats.OnGround)
                 {
-                    remainingJumps--;
+                    _remainingJumps--;
                 }
             }
         }

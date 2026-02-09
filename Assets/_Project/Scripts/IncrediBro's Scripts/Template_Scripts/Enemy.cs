@@ -88,8 +88,8 @@ namespace DragonspiritGames.PlatformerController
             if (enemyData == null) return;
             
             // Set health
-            m_maxHealth = enemyData.maxHealth;
-            m_currentHealth = m_maxHealth;
+            maxHealth = enemyData.maxHealth;
+            currentHealth = maxHealth;
             
             // Set sprite
             if (enemySpriteRenderer != null && enemyData.enemySprite != null)

@@ -1,46 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
 {
     public class Player_Interactions : MonoBehaviour
     {
-        private Player_Stats player_stats;
-        private Interactable m_currentInteractable;
+        Player_Stats _player_stats;
+        Interactable _currentInteractable;
 
-        private void Awake()
+        void Awake()
         {
-            player_stats = GetComponent<Player_Stats>();
+            _player_stats = GetComponent<Player_Stats>();
         }
 
-        private void Update()
+        void Update()
         {
-            if(m_currentInteractable && m_currentInteractable.transform.parent == null && player_stats.M_Input.InteractEndedThisFrame())
+            if(_currentInteractable && _currentInteractable.transform.parent == null && _player_stats.Input.InteractEndedThisFrame())
             {
-                m_currentInteractable.Interact();
+                _currentInteractable.Interact();
             }
 
-            if (player_stats.M_HoldThrowTransform.childCount > 0 && player_stats.M_Input.InteractEndedThisFrame())
+            if (_player_stats.HoldThrowTransform.childCount > 0 && _player_stats.Input.InteractEndedThisFrame())
             {
-                player_stats.M_HoldThrowTransform.GetComponentInChildren<Throwable>().Throw();
+                _player_stats.HoldThrowTransform.GetComponentInChildren<Throwable>().Throw();
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
         {
-            other.TryGetComponent<Interactable>(out m_currentInteractable);
+            other.TryGetComponent<Interactable>(out _currentInteractable);
 
-            m_currentInteractable?.EnableInteractGFX();
+            _currentInteractable?.EnableInteractGFX();
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        void OnTriggerExit2D(Collider2D other)
         {
-            if (m_currentInteractable?.GetInteractableType() != InteractableType.Health)
+            if (_currentInteractable?.GetInteractableType() != InteractableType.Health)
             {
-                m_currentInteractable?.DisableInteractGFX();
+                _currentInteractable?.DisableInteractGFX();
             }
-            m_currentInteractable = null;
+            _currentInteractable = null;
         }
     }
 }

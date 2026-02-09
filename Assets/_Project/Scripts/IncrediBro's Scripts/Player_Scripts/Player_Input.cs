@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,11 +5,11 @@ namespace DragonspiritGames.PlatformerController
 {
     public class Player_Input : MonoBehaviour
     {
-        private PlayerInput m_inputActions;
+        PlayerInput _inputActions;
 
-        private InputAction m_playerMovementIA;
-        private InputAction m_playerJumpIA;
-        private InputAction m_playerInteractIA;
+        InputAction _playerMovementIA;
+        InputAction _playerJumpIA;
+        InputAction _playerInteractIA;
 
         void OnEnable()
         {
@@ -25,62 +23,62 @@ namespace DragonspiritGames.PlatformerController
 
         void InitializeInputActions()
         {
-            m_inputActions = new PlayerInput();
+            _inputActions = new PlayerInput();
 
-            m_playerMovementIA = m_inputActions.Player.Move;
-            m_playerMovementIA.Enable();
+            _playerMovementIA = _inputActions.Player.Move;
+            _playerMovementIA.Enable();
 
-            m_playerJumpIA = m_inputActions.Player.Jump;
-            m_playerJumpIA.Enable();
+            _playerJumpIA = _inputActions.Player.Jump;
+            _playerJumpIA.Enable();
 
-            m_playerInteractIA = m_inputActions.Player.Interact;
-            m_playerInteractIA.Enable();
+            _playerInteractIA = _inputActions.Player.Interact;
+            _playerInteractIA.Enable();
         }
 
         void ClearInputActions()
         {
-            m_inputActions.Player.Disable();
-            m_playerMovementIA.Disable();
-            m_playerJumpIA.Disable();
-            m_inputActions = null;
+            _inputActions.Player.Disable();
+            _playerMovementIA.Disable();
+            _playerJumpIA.Disable();
+            _inputActions = null;
         }
 
         public float GetHorizontalAxis()
         {
-            Vector2 movement = m_playerMovementIA.ReadValue<Vector2>();
+            Vector2 movement = _playerMovementIA.ReadValue<Vector2>();
             return movement.x;
         }
 
         public float GetVerticalAxis()
         {
-            Vector2 movement = m_playerMovementIA.ReadValue<Vector2>();
+            Vector2 movement = _playerMovementIA.ReadValue<Vector2>();
             return movement.y;
         }
 
         public bool JumpPressedThisFrame()
         {
-            return m_playerJumpIA.triggered;
+            return _playerJumpIA.triggered;
         }
         public bool JumpEndedThisFrame()
         {
-            return m_playerJumpIA.WasReleasedThisFrame();
+            return _playerJumpIA.WasReleasedThisFrame();
         }
         public bool JumpPressed()
         {
-            return m_playerJumpIA.IsPressed();
+            return _playerJumpIA.IsPressed();
         }
 
         public bool InteractPressedThisFrame()
         {
-            return m_playerInteractIA.triggered;
+            return _playerInteractIA.triggered;
         }
         public bool InteractEndedThisFrame()
         {
-            return m_playerInteractIA.WasReleasedThisFrame();
+            return _playerInteractIA.WasReleasedThisFrame();
         }
         public bool InteractPressed()
         {
-            return m_playerInteractIA.IsPressed();
+            return _playerInteractIA.IsPressed();
         }
     }
 }

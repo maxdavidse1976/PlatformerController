@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 2
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -77,6 +78,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +91,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -282,70 +285,83 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1880375488
+    uuid:
+      value0: 2211722176
+      value1: 0
+      value2: 0
+      value3: 0
+    guid: -2083245120
     name: young_gaia_run-outline
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: young_gaia_run-outline_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 13
         width: 44
         height: 50
       spriteId: 7855e1d6a7b60bb4d87703ec64ee584c
-    - name: young_gaia_run-outline_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 7
         width: 32
         height: 55
       spriteId: 69c7e1840a2a9ad458fdfb3742b9ef02
-    - name: young_gaia_run-outline_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 2
         width: 24
         height: 59
       spriteId: 008168f88bcb9c346ab795db4cb0a717
-    - name: young_gaia_run-outline_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 2
         width: 22
         height: 56
       spriteId: e9a68cc6e1c0a634086c1c7235c23d47
-    - name: young_gaia_run-outline_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 13
         width: 44
         height: 50
       spriteId: 34e11c0a675d4ba4b90ca78d98489bf2
-    - name: young_gaia_run-outline_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 8
         width: 32
         height: 55
       spriteId: b31db5550adac284b958c6002761cf4e
-    - name: young_gaia_run-outline_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 23
         y: 1
         width: 24
         height: 59
       spriteId: c7fe4dc94a6773041a5ff9215fa090aa
-    - name: young_gaia_run-outline_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 24
         y: 2
@@ -355,6 +371,8 @@ ScriptedImporter:
     linkedCells: []
     parentIndex: -1
   platformSettings: []
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
+  previousTextureSize: {x: 128, y: 256}

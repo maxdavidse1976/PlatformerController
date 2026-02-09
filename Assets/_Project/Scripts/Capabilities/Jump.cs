@@ -41,7 +41,7 @@ namespace DragonspiritGames.PlatformerController
             _onGround = _collisionDetector.OnGround;
             _velocity = _rigidbody.velocity;
 
-            //TODO: IsFalling Bool insted
+            //TODO: IsFalling Bool instead
             if (_onGround) 
             {
                 _jumpPhase = 0;

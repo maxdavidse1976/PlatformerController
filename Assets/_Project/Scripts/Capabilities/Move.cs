@@ -48,12 +48,12 @@ namespace DragonspiritGames.PlatformerController
             if (Mathf.Abs(_velocity.x) > Mathf.Epsilon)
             {
                 _gaiaAnimator.SetBool("isRunning", true);
-                AudioManager.Instance.PlayClip(_stepsClips[7], 0);
+                //AudioManager.Instance.PlayClip(_stepsClips[7], 0);
             }
             else
             {
                 _gaiaAnimator.SetBool("isRunning", false);
-                AudioManager.Instance.StopClip(_stepsClips[7]);
+                //AudioManager.Instance.StopClip(_stepsClips[7]);
             }
 
             if (_velocity.x < -0.2f)

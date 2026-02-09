@@ -6,28 +6,28 @@ namespace DragonspiritGames.PlatformerController
 {
     public class MovingPlatform : MonoBehaviour
     {
-        [SerializeField] private Transform[] waypoints;   
-        [SerializeField] private float speed = 2f;        
-        [SerializeField] private float waitTime = 1f;     
-        [SerializeField] private bool loop = true;        
-        [SerializeField] private bool pingpong = false;   
+        [SerializeField] Transform[] _waypoints;   
+        [SerializeField] float _speed = 2f;        
+        [SerializeField] float _waitTime = 1f;     
+        [SerializeField] bool _loop = true;        
+        [SerializeField] bool _pingpong = false;   
 
-        private int currentWaypointIndex = 0;   
-        private bool moving = true;             
-        private float timer = 0f;               
-        private bool movingForward = true;      
+        int _currentWaypointIndex = 0;   
+        bool _moving = true;             
+        float _timer = 0f;               
+        bool _movingForward = true;      
 
-        private void Start()
+        void Start()
         {
-            if (waypoints.Length == 0)
+            if (_waypoints.Length == 0)
             {
                 enabled = false;
             }
         }
 
-        private void Update()
+        void Update()
         {
-            if (moving)
+            if (_moving)
             {
                 MovePlatform();
             }
@@ -37,40 +37,41 @@ namespace DragonspiritGames.PlatformerController
             }
         }
 
-        private void MovePlatform()
+        // TODO: Refactor this
+        void MovePlatform()
         {
-            Vector3 targetPosition = waypoints[currentWaypointIndex].position;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+            Vector3 targetPosition = _waypoints[_currentWaypointIndex].position;
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, _speed * Time.deltaTime);
 
             if (transform.position == targetPosition)
             {
-                if (pingpong)
+                if (_pingpong)
                 {
-                    if (movingForward)
+                    if (_movingForward)
                     {
-                        currentWaypointIndex++;
+                        _currentWaypointIndex++;
                     }
                     else
                     {
-                        currentWaypointIndex--;
+                        _currentWaypointIndex--;
                     }
 
-                    if (currentWaypointIndex == waypoints.Length - 1)
+                    if (_currentWaypointIndex == _waypoints.Length - 1)
                     {
-                        movingForward = false;
+                        _movingForward = false;
                     }
-                    else if (currentWaypointIndex == 0)
+                    else if (_currentWaypointIndex == 0)
                     {
-                        movingForward = true;
+                        _movingForward = true;
                     }
                 }
                 else
                 {
-                    if (currentWaypointIndex == waypoints.Length - 1)
+                    if (_currentWaypointIndex == _waypoints.Length - 1)
                     {
-                        if (loop)
+                        if (_loop)
                         {
-                            currentWaypointIndex = 0;
+                            _currentWaypointIndex = 0;
                         }
                         else
                         {
@@ -80,42 +81,42 @@ namespace DragonspiritGames.PlatformerController
                     }
                     else
                     {
-                        currentWaypointIndex++;
+                        _currentWaypointIndex++;
                     }
                 }
 
-                timer = 0f;
-                moving = false;
+                _timer = 0f;
+                _moving = false;
             }
         }
 
-        private void WaitAtWaypoint()
+        void WaitAtWaypoint()
         {
-            timer += Time.deltaTime;
+            _timer += Time.deltaTime;
 
-            if (timer >= waitTime)
+            if (_timer >= _waitTime)
             {
-                moving = true;
+                _moving = true;
             }
         }
 
-        private void ResetPlatform()
+        void ResetPlatform()
         {
-            currentWaypointIndex = 0;
-            transform.position = waypoints[currentWaypointIndex].position;
-            moving = true;
+            _currentWaypointIndex = 0;
+            transform.position = _waypoints[_currentWaypointIndex].position;
+            _moving = true;
         }
 
-        private void OnDrawGizmos()
+        void OnDrawGizmos()
         {
-            for (int i = 0; i < waypoints.Length - 1; i++)
+            for (int i = 0; i < _waypoints.Length - 1; i++)
             {
-                Gizmos.DrawLine(waypoints[i].position, waypoints[i + 1].position);
+                Gizmos.DrawLine(_waypoints[i].position, _waypoints[i + 1].position);
             }
 
-            if (loop && waypoints.Length > 1)
+            if (_loop && _waypoints.Length > 1)
             {
-                Gizmos.DrawLine(waypoints[waypoints.Length - 1].position, waypoints[0].position);
+                Gizmos.DrawLine(_waypoints[_waypoints.Length - 1].position, _waypoints[0].position);
             }
         }
     }

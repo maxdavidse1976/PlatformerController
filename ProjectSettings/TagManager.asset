@@ -9,6 +9,7 @@ TagManager:
   - Climbable
   - Audio Cue
   - IOI
+  - CutsceneCamera
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Sky
   - Player
   - Ground
-  - 
+  - Building
   - 
   - 
   - 
@@ -63,4 +64,10 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1891482705
+    locked: 0
+  - name: Weather / FX
+    uniqueID: 1454926263
+    locked: 0
+  - name: Gameplay UI
+    uniqueID: 2769214553
     locked: 0

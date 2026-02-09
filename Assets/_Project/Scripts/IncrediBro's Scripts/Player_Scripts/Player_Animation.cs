@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
 {
     public class Player_Animation : MonoBehaviour
     {
-        Player_Stats player_stats;
+        Player_Stats _player_stats;
 
         private void Awake()
         {
-            player_stats = GetComponent<Player_Stats>();
+            _player_stats = GetComponent<Player_Stats>();
         }
 
         private void Update()
@@ -18,36 +16,34 @@ namespace DragonspiritGames.PlatformerController
             AnimateMovements();
             AnimateJumps();
 
-            if (player_stats.M_Rigidbody.velocity.x < -0.2f)
+            if (_player_stats.Rigidbody.velocity.x < -0.2f)
             {
-                //player_stats.M_SpriteRenderer.flipX = true;
-                transform.localScale = new Vector3(-1, 1, 1);
+                _player_stats.SpriteRenderer.flipX = true;
             }
-            else if (player_stats.M_Rigidbody.velocity.x > 0.2f)
+            else if (_player_stats.Rigidbody.velocity.x > 0.2f)
             {
-                //player_stats.M_SpriteRenderer.flipX = false;
-                transform.localScale = new Vector3(1, 1, 1);
+                _player_stats.SpriteRenderer.flipX = false;
             }
         }
 
         void AnimateMovements()
         {
-            if (Mathf.Abs(player_stats.M_Input.GetHorizontalAxis()) > Mathf.Epsilon && player_stats.M_OnGround)
+            if (Mathf.Abs(_player_stats.Input.GetHorizontalAxis()) > Mathf.Epsilon && _player_stats.OnGround)
             {
-                player_stats.M_Animator.SetBool("isRunning", true);
+                _player_stats.Animator.SetBool("isRunning", true);
                 //AudioManager.Instance.PlayClip(_stepsClips[7]);
             }
             else
             {
-                player_stats.M_Animator.SetBool("isRunning", false);
+                _player_stats.Animator.SetBool("isRunning", false);
                 //AudioManager.Instance.StopClip(_stepsClips[7]);
             }
         }
 
         void AnimateJumps()
         {
-            player_stats.M_Animator.SetFloat("yVelocity", player_stats.M_Rigidbody.velocity.y);
-            player_stats.M_Animator.SetBool("isGrounded", player_stats.M_OnGround);
+            _player_stats.Animator.SetFloat("yVelocity", _player_stats.Rigidbody.velocity.y);
+            _player_stats.Animator.SetBool("isGrounded", _player_stats.OnGround);
         }
     }
 }

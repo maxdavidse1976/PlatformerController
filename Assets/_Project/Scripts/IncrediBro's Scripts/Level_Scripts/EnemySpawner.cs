@@ -6,80 +6,80 @@ namespace DragonspiritGames.PlatformerController
     public class EnemySpawner : MonoBehaviour
     {
         [Header("Spawn Configuration")]
-        [SerializeField] private GameObject enemyPrefab;
-        [SerializeField] private EnemyData[] possibleEnemyTypes;
-        [SerializeField] private Transform[] spawnPoints;
-        [SerializeField] private int maxEnemies = 5;
-        [SerializeField] private float spawnCooldown = 3f;
-        [SerializeField] private bool spawnOnStart = true;
-        [SerializeField] private bool respawnEnemies = true;
+        [SerializeField] GameObject _enemyPrefab;
+        [SerializeField] EnemyData[] _possibleEnemyTypes;
+        [SerializeField] Transform[] _spawnPoints;
+        [SerializeField] int _maxEnemies = 5;
+        [SerializeField] float _spawnCooldown = 3f;
+        [SerializeField] bool _spawnOnStart = true;
+        [SerializeField] bool _respawnEnemies = true;
         
         [Header("Spawn Conditions")]
-        [SerializeField] private float playerDistanceThreshold = 10f;
-        [SerializeField] private bool requirePlayerInRange = true;
+        [SerializeField] float _playerDistanceThreshold = 10f;
+        [SerializeField] bool _requirePlayerInRange = true;
         
-        private List<Enemy> spawnedEnemies = new List<Enemy>();
-        private float lastSpawnTime;
-        private Transform player;
+        List<Enemy> _spawnedEnemies = new List<Enemy>();
+        float _lastSpawnTime;
+        Transform _player;
         
-        private void Start()
+        void Start()
         {
             // Find player
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj != null)
-                player = playerObj.transform;
+                _player = playerObj.transform;
             
             // Set default spawn points if none assigned
-            if (spawnPoints == null || spawnPoints.Length == 0)
+            if (_spawnPoints == null || _spawnPoints.Length == 0)
             {
-                spawnPoints = new Transform[] { transform };
+                _spawnPoints = new Transform[] { transform };
             }
             
-            if (spawnOnStart)
+            if (_spawnOnStart)
             {
                 SpawnInitialEnemies();
             }
         }
         
-        private void Update()
+        void Update()
         {
             // Clean up destroyed enemies
-            spawnedEnemies.RemoveAll(enemy => enemy == null);
+            _spawnedEnemies.RemoveAll(enemy => enemy == null);
             
             // Check if we should spawn more enemies
-            if (respawnEnemies && CanSpawn())
+            if (_respawnEnemies && CanSpawn())
             {
                 SpawnEnemy();
             }
         }
         
-        private void SpawnInitialEnemies()
+        void SpawnInitialEnemies()
         {
-            int enemiesToSpawn = Mathf.Min(maxEnemies, spawnPoints.Length);
+            int enemiesToSpawn = Mathf.Min(_maxEnemies, _spawnPoints.Length);
             
             for (int i = 0; i < enemiesToSpawn; i++)
             {
-                SpawnEnemyAtPoint(i % spawnPoints.Length);
+                SpawnEnemyAtPoint(i % _spawnPoints.Length);
             }
         }
         
-        private bool CanSpawn()
+        bool CanSpawn()
         {
             // Check if we're under the limit
-            if (spawnedEnemies.Count >= maxEnemies)
+            if (_spawnedEnemies.Count >= _maxEnemies)
                 return false;
                 
             // Check cooldown
-            if (Time.time < lastSpawnTime + spawnCooldown)
+            if (Time.time < _lastSpawnTime + _spawnCooldown)
                 return false;
                 
             // Check if player is in range (if required)
-            if (requirePlayerInRange && player != null)
+            if (_requirePlayerInRange && _player != null)
             {
                 bool playerInRange = false;
-                foreach (var spawnPoint in spawnPoints)
+                foreach (var spawnPoint in _spawnPoints)
                 {
-                    if (Vector2.Distance(player.position, spawnPoint.position) <= playerDistanceThreshold)
+                    if (Vector2.Distance(_player.position, spawnPoint.position) <= _playerDistanceThreshold)
                     {
                         playerInRange = true;
                         break;
@@ -93,18 +93,18 @@ namespace DragonspiritGames.PlatformerController
             return true;
         }
         
-        private void SpawnEnemy()
+        void SpawnEnemy()
         {
             // Find a suitable spawn point
-            int spawnIndex = Random.Range(0, spawnPoints.Length);
+            int spawnIndex = Random.Range(0, _spawnPoints.Length);
             
             // Make sure player isn't too close to spawn point
-            if (player != null && Vector2.Distance(player.position, spawnPoints[spawnIndex].position) < 2f)
+            if (_player != null && Vector2.Distance(_player.position, _spawnPoints[spawnIndex].position) < 2f)
             {
                 // Try to find a different spawn point
-                for (int i = 0; i < spawnPoints.Length; i++)
+                for (int i = 0; i < _spawnPoints.Length; i++)
                 {
-                    if (Vector2.Distance(player.position, spawnPoints[i].position) >= 2f)
+                    if (Vector2.Distance(_player.position, _spawnPoints[i].position) >= 2f)
                     {
                         spawnIndex = i;
                         break;
@@ -115,34 +115,34 @@ namespace DragonspiritGames.PlatformerController
             SpawnEnemyAtPoint(spawnIndex);
         }
         
-        private void SpawnEnemyAtPoint(int spawnIndex)
+        void SpawnEnemyAtPoint(int spawnIndex)
         {
-            if (spawnIndex < 0 || spawnIndex >= spawnPoints.Length)
+            if (spawnIndex < 0 || spawnIndex >= _spawnPoints.Length)
                 return;
                 
-            if (enemyPrefab == null)
+            if (_enemyPrefab == null)
                 return;
                 
             // Spawn the enemy
-            GameObject spawnedObj = Instantiate(enemyPrefab, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
+            GameObject spawnedObj = Instantiate(_enemyPrefab, _spawnPoints[spawnIndex].position, _spawnPoints[spawnIndex].rotation);
             Enemy enemy = spawnedObj.GetComponent<Enemy>();
             
             if (enemy != null)
             {
                 // Assign random enemy data if multiple types available
-                if (possibleEnemyTypes != null && possibleEnemyTypes.Length > 0)
+                if (_possibleEnemyTypes != null && _possibleEnemyTypes.Length > 0)
                 {
-                    EnemyData randomEnemyData = possibleEnemyTypes[Random.Range(0, possibleEnemyTypes.Length)];
+                    EnemyData randomEnemyData = _possibleEnemyTypes[Random.Range(0, _possibleEnemyTypes.Length)];
                     enemy.SetEnemyData(randomEnemyData);
                 }
                 
                 // Subscribe to death event for cleanup
                 enemy.OnEnemyDeath += OnEnemyDied;
                 
-                spawnedEnemies.Add(enemy);
-                lastSpawnTime = Time.time;
+                _spawnedEnemies.Add(enemy);
+                _lastSpawnTime = Time.time;
                 
-                Debug.Log($"Spawned enemy at {spawnPoints[spawnIndex].position}");
+                Debug.Log($"Spawned enemy at {_spawnPoints[spawnIndex].position}");
             }
             else
             {
@@ -150,15 +150,15 @@ namespace DragonspiritGames.PlatformerController
             }
         }
         
-        private void OnEnemyDied(Enemy deadEnemy)
+        void OnEnemyDied(Enemy deadEnemy)
         {
-            spawnedEnemies.Remove(deadEnemy);
+            _spawnedEnemies.Remove(deadEnemy);
             Debug.Log($"Enemy died: {deadEnemy.name}");
         }
         
         public void SpawnEnemyManually()
         {
-            if (spawnedEnemies.Count < maxEnemies)
+            if (_spawnedEnemies.Count < _maxEnemies)
             {
                 SpawnEnemy();
             }
@@ -166,43 +166,43 @@ namespace DragonspiritGames.PlatformerController
         
         public void SpawnSpecificEnemy(EnemyData enemyData)
         {
-            if (spawnedEnemies.Count >= maxEnemies || enemyPrefab == null)
+            if (_spawnedEnemies.Count >= _maxEnemies || _enemyPrefab == null)
                 return;
                 
-            int spawnIndex = Random.Range(0, spawnPoints.Length);
-            GameObject spawnedObj = Instantiate(enemyPrefab, spawnPoints[spawnIndex].position, spawnPoints[spawnIndex].rotation);
+            int spawnIndex = Random.Range(0, _spawnPoints.Length);
+            GameObject spawnedObj = Instantiate(_enemyPrefab, _spawnPoints[spawnIndex].position, _spawnPoints[spawnIndex].rotation);
             Enemy enemy = spawnedObj.GetComponent<Enemy>();
             
             if (enemy != null)
             {
                 enemy.SetEnemyData(enemyData);
                 enemy.OnEnemyDeath += OnEnemyDied;
-                spawnedEnemies.Add(enemy);
-                lastSpawnTime = Time.time;
+                _spawnedEnemies.Add(enemy);
+                _lastSpawnTime = Time.time;
             }
         }
         
         public void ClearAllEnemies()
         {
-            foreach (var enemy in spawnedEnemies)
+            foreach (var enemy in _spawnedEnemies)
             {
                 if (enemy != null)
                 {
                     Destroy(enemy.gameObject);
                 }
             }
-            spawnedEnemies.Clear();
+            _spawnedEnemies.Clear();
         }
         
-        public int GetSpawnedEnemyCount() => spawnedEnemies.Count;
-        public int GetMaxEnemies() => maxEnemies;
+        public int GetSpawnedEnemyCount() => _spawnedEnemies.Count;
+        public int GetMaxEnemies() => _maxEnemies;
         
         private void OnDrawGizmosSelected()
         {
-            if (spawnPoints != null)
+            if (_spawnPoints != null)
             {
                 Gizmos.color = Color.blue;
-                foreach (var point in spawnPoints)
+                foreach (var point in _spawnPoints)
                 {
                     if (point != null)
                     {
@@ -210,7 +210,7 @@ namespace DragonspiritGames.PlatformerController
                         
                         // Draw player distance threshold
                         Gizmos.color = Color.cyan;
-                        Gizmos.DrawWireSphere(point.position, playerDistanceThreshold);
+                        Gizmos.DrawWireSphere(point.position, _playerDistanceThreshold);
                         Gizmos.color = Color.blue;
                     }
                 }

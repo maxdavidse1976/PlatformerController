@@ -1,34 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
 {
     public class Player_Climbing : MonoBehaviour
     {
-        private Player_Stats player_stats;
-        private ClimbableObject m_currentClimbableObject;
+        Player_Stats _player_stats;
+        ClimbableObject _currentClimbableObject;
         
-        [SerializeField] private float m_climbSpeed = 4f;
+        [SerializeField] float _climbSpeed = 4f;
         
-        private void Awake()
+        void Awake()
         {
-            player_stats = GetComponent<Player_Stats>();
+            _player_stats = GetComponent<Player_Stats>();
         }
 
-        private void Update()
+        void Update()
         {
-            if (m_currentClimbableObject)
+            if (_currentClimbableObject)
             {
-                float verticalInput = player_stats.M_Input.GetVerticalAxis();
-                Rigidbody2D rb = player_stats.M_Rigidbody;
+                float verticalInput = _player_stats.Input.GetVerticalAxis();
+                Rigidbody2D rb = _player_stats.Rigidbody;
 
                 // Check if the player is pressing up or down to climb
                 if (verticalInput != 0f)
                 {
-                    player_stats.M_OnLadder = true;
-                    transform.position = new Vector3(m_currentClimbableObject.transform.position.x, transform.position.y, transform.position.z);
-                    rb.velocity = new Vector2(0f, verticalInput * m_climbSpeed);
+                    _player_stats.OnLadder = true;
+                    transform.position = new Vector3(_currentClimbableObject.transform.position.x, transform.position.y, transform.position.z);
+                    rb.velocity = new Vector2(0f, verticalInput * _climbSpeed);
                     rb.gravityScale = 0f;  // Disable gravity while climbing
                 }
                 else
@@ -36,29 +34,29 @@ namespace DragonspiritGames.PlatformerController
                     rb.velocity = new Vector2(rb.velocity.x, 0f);
                 }
 
-                if (m_currentClimbableObject.allowSideWays)
+                if (_currentClimbableObject.allowSideWays)
                 {
-                    float horizontalInput = player_stats.M_Input.GetHorizontalAxis();
-                    rb.velocity = new Vector2(horizontalInput * m_climbSpeed, rb.velocity.x);
+                    float horizontalInput = _player_stats.Input.GetHorizontalAxis();
+                    rb.velocity = new Vector2(horizontalInput * _climbSpeed, rb.velocity.x);
                 }
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Climbable")
             {
-                m_currentClimbableObject = other.GetComponent<ClimbableObject>();
+                _currentClimbableObject = other.GetComponent<ClimbableObject>();
             }
         }
 
-        private void OnTriggerExit2D(Collider2D other)
+        void OnTriggerExit2D(Collider2D other)
         {
             if (other.tag == "Climbable")
             {
-                m_currentClimbableObject = null;
-                player_stats.M_Rigidbody.gravityScale = 1f;
-                player_stats.M_OnLadder = false;
+                _currentClimbableObject = null;
+                _player_stats.Rigidbody.gravityScale = 1f;
+                _player_stats.OnLadder = false;
             }
         }
     }

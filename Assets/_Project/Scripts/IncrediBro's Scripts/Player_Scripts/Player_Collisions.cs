@@ -1,29 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DragonspiritGames.PlatformerController
 {
     public class Player_Collisions : MonoBehaviour
     {
-        Player_Stats player_stats;
+        Player_Stats _player_stats;
 
-        [SerializeField] private float raycastDistance;
-        [SerializeField] private LayerMask groundCollisionLayers;
+        [SerializeField] float _raycastDistance;
+        [SerializeField] LayerMask _groundCollisionLayers;
 
-        private void Awake()
+        void Awake()
         {
-            player_stats = GetComponent<Player_Stats>();
+            _player_stats = GetComponent<Player_Stats>();
         }
 
-        private void Update()
+        void Update()
         {
-            player_stats.M_OnGround = IsGrounded();
+            _player_stats.OnGround = IsGrounded();
         }
 
         bool IsGrounded()
         {
-            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.down, raycastDistance, groundCollisionLayers);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.down, _raycastDistance, _groundCollisionLayers);
 
             if (hits.Length > 0)
             {
@@ -37,5 +35,6 @@ namespace DragonspiritGames.PlatformerController
             }
             return false;
         }
+
     }
 }

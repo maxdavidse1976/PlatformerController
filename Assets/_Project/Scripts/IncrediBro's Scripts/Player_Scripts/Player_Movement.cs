@@ -6,10 +6,10 @@ namespace DragonspiritGames.PlatformerController
 {
     public class Player_Movement : MonoBehaviour
     {
-        Player_Stats player_stats;
-        [SerializeField, Range(0f, 100f)] private float m_maxSpeed = 4f;
-        [SerializeField, Range(0f, 100f)] private float m_maxAcceleration = 35f;
-        [SerializeField, Range(0f, 100f)] private float m_maxAirAcceleration = 20f;
+        Player_Stats _player_stats;
+        [SerializeField, Range(0f, 100f)] float _maxSpeed = 4f;
+        [SerializeField, Range(0f, 100f)] float _maxAcceleration = 35f;
+        [SerializeField, Range(0f, 100f)] float _maxAirAcceleration = 20f;
 
         Vector2 _inputDirection;
         Vector2 _desiredVelocity;
@@ -19,38 +19,38 @@ namespace DragonspiritGames.PlatformerController
 
         bool _onGround;
 
-        private void Awake()
+        void Awake()
         {
-            player_stats = GetComponent<Player_Stats>();
+            _player_stats = GetComponent<Player_Stats>();
         }
 
         void Update()
         {
-            if (player_stats.M_OnLadder && !player_stats.M_OnGround) return;
+            if (_player_stats.OnLadder && !_player_stats.OnGround) return;
 
-            _inputDirection.x = player_stats.M_Input.GetHorizontalAxis();
-            _desiredVelocity = new Vector2(_inputDirection.x, 0f) * Mathf.Max(m_maxSpeed - player_stats.M_Friction, 0f);
+            _inputDirection.x = _player_stats.Input.GetHorizontalAxis();
+            _desiredVelocity = new Vector2(_inputDirection.x, 0f) * Mathf.Max(_maxSpeed - _player_stats.Friction, 0f);
         }
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
-            if (player_stats.M_OnLadder && !player_stats.M_OnGround) return;
+            if (_player_stats.OnLadder && !_player_stats.OnGround) return;
 
             Move();
         }
 
         void Move()
         {
-            _onGround = player_stats.M_OnGround;
-            Vector2 _velocity = player_stats.M_Rigidbody.velocity;
+            _onGround = _player_stats.OnGround;
+            Vector2 _velocity = _player_stats.Rigidbody.velocity;
 
-            _acceleration = _onGround ? m_maxAcceleration : m_maxAirAcceleration;
+            _acceleration = _onGround ? _maxAcceleration : _maxAirAcceleration;
 
             _maxSpeedChange = _acceleration * Time.deltaTime;
 
             _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, _maxSpeedChange);
 
-            player_stats.M_Rigidbody.velocity = _velocity;
+            _player_stats.Rigidbody.velocity = _velocity;
         }
     }
 }
